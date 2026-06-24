@@ -3,7 +3,7 @@ kind: StorageClass
 metadata:
   name: jerney-ebs-sc
 
-provisioner: ebs.csi.eks.amazonaws.com
+provisioner: ebs.csi.aws.com
 reclaimPolicy: Retain # default value is Delete
 allowVolumeExpansion: true
 volumeBindingMode: WaitForFirstConsumer
