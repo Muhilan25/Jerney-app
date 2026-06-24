@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: jerney-backend
-        image: 072583797351.dkr.ecr.ap-south-1.amazonaws.com/nodeapp-backend:v13
+        image: 072583797351.dkr.ecr.ap-south-1.amazonaws.com/nodeapp-backend:v27
         ports:
         - containerPort: 5000
           protocol: TCP
