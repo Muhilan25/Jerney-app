@@ -31,7 +31,7 @@ spec:
       - name: frontend
         image: 072583797351.dkr.ecr.ap-south-1.amazonaws.com/nodeapp-frontend:v13
         ports:
-        - containerPort: 8080
+        - containerPort: 80
           protocol: TCP
 
         resources:
@@ -44,14 +44,14 @@ spec:
         livenessProbe:
           httpGet:
             path: /
-            port: 8080
+            port: 80
           initialDelaySeconds: 5
           periodSeconds: 10
 
         readinessProbe:
           httpGet:
             path: /
-            port: 8080
+            port: 80
           initialDelaySeconds: 3
           periodSeconds: 5
 
@@ -72,7 +72,7 @@ spec:
   ports:
     - protocol: TCP
       port: 80         
-      targetPort: 8080 
+      targetPort: 80
     
 
 

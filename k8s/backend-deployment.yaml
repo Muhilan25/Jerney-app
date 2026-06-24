@@ -38,14 +38,14 @@ spec:
                   name: jerney-db-secret
                   key: POSTGRES_USER
 
-          - name: DB_PASSOWRD
+          - name: DB_PASSWORD
             valueFrom:
-                secretkeyRef:
+                secretKeyRef:
                   name: jerney-db-secret
                   key: POSTGRES_PASSWORD
           - name: DB_NAME
             valueFrom:
-                secretkeyRef:
+                secretKeyRef:
                   name: jerney-db-secret
                   key: POSTGRES_DB
         resources:
