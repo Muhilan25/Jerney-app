@@ -33,7 +33,6 @@ spec:
         volumeMounts:
         - name: db-storage
           mountPath: /var/lib/postgresql/data
-          subPath: pgdata
 
         livenessProbe:
           exec:
