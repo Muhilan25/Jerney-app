@@ -1,3 +1,20 @@
+def slackNotificationMethod(String buildStatus = 'STARTED') {
+    buildStatus = buildStatus ?: 'SUCCESS'
+
+    def color
+    if (buildStatus == 'SUCCESS') {
+        color = '#47ec05'
+    }else if (buildStatus == 'UNSTABLE') {
+        color = '#d5ee0d'
+    } else {
+        color = '#ec2805'
+    }
+
+    def msg = "${buildStatus}: `${env.JOB_NAME}` #${env.BUILD_NUMBER}:\n${env.BUILD_URL}"
+    slackSend(color: color, message: msg)
+}
+
+
 pipeline {
     agent any
     tools{
@@ -250,6 +267,7 @@ pipeline {
     }
     post {
         always {
+            slackNotificationMethod("${currentBuild.result}")
             archiveArtifacts artifacts: 'gitleaks-report.txt', followSymlinks: false
             archiveArtifacts artifacts: 'frontend-audit.json', followSymlinks: false
             archiveArtifacts artifacts: 'backend-audit.json', followSymlinks: false
@@ -259,3 +277,5 @@ pipeline {
         }
     }
 }
+
+FqvpKerB2SnORq9v
