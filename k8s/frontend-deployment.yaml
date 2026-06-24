@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: 072583797351.dkr.ecr.ap-south-1.amazonaws.com/nodeapp-frontend:v27
+        image: 072583797351.dkr.ecr.ap-south-1.amazonaws.com/nodeapp-frontend:v29
         ports:
         - containerPort: 80
           protocol: TCP
